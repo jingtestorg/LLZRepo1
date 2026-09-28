@@ -1,0 +1,117 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Cost Center",
+    "version": "1.0.1",
+    "description": "This service enables you to create, read, update, and delete cost center master data in your system."
+  },
+  "x-sap-api-type": "ODATAV4",
+  "x-ord-id": "sap.s4:apiResource:CE_COSTCENTER_0001:v1",
+  "tags": [
+    { "name": "Cost Center Text" },
+    { "name": "Cost Center" }
+  ],
+  "paths": {
+    "/A_CostCenter_2": {
+      "get": {
+        "summary": "Get entities from A_CostCenter_2",
+        "tags": ["Cost Center"],
+        "parameters": [
+          { "$ref": "#/components/parameters/top" },
+          { "$ref": "#/components/parameters/skip" },
+          { "name": "$filter", "in": "query", "schema": { "type": "string" } },
+          { "$ref": "#/components/parameters/count" },
+          { "name": "$orderby", "in": "query", "schema": { "type": "string" } },
+          { "name": "$select", "in": "query", "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retrieved entities",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "@odata.count": { "type": "number" },
+                    "value": {
+                      "type": "array",
+                      "items": { "$ref": "#/components/schemas/CostCenter_Type" }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/A_CostCenterText_2": {
+      "get": {
+        "summary": "Get entities from A_CostCenterText_2",
+        "tags": ["Cost Center Text"],
+        "parameters": [
+          { "$ref": "#/components/parameters/top" },
+          { "$ref": "#/components/parameters/skip" },
+          { "name": "$filter", "in": "query", "schema": { "type": "string" } },
+          { "$ref": "#/components/parameters/count" },
+          { "name": "$select", "in": "query", "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retrieved entities",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "@odata.count": { "type": "number" },
+                    "value": {
+                      "type": "array",
+                      "items": { "$ref": "#/components/schemas/CostCenterText_Type" }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CostCenter_Type": {
+        "type": "object",
+        "properties": {
+          "ControllingArea": { "type": "string", "maxLength": 4 },
+          "CostCenter": { "type": "string", "maxLength": 10 },
+          "ValidityEndDate": { "type": "string", "format": "date" },
+          "ValidityStartDate": { "type": "string", "format": "date" },
+          "CostCenterName": { "type": "string", "maxLength": 20 },
+          "CostCenterDescription": { "type": "string", "maxLength": 40 },
+          "CompanyCode": { "type": "string", "maxLength": 4 },
+          "CostCenterCategory": { "type": "string", "maxLength": 1 },
+          "CostCtrResponsiblePersonName": { "type": "string", "maxLength": 20 },
+          "Department": { "type": "string", "maxLength": 12 },
+          "ProfitCenter": { "type": "string", "maxLength": 10 }
+        }
+      },
+      "CostCenterText_Type": {
+        "type": "object",
+        "properties": {
+          "Language": { "type": "string", "maxLength": 2 },
+          "ControllingArea": { "type": "string", "maxLength": 4 },
+          "CostCenter": { "type": "string", "maxLength": 10 },
+          "ValidityEndDate": { "type": "string", "format": "date" },
+          "CostCenterName": { "type": "string", "maxLength": 20 },
+          "CostCenterDescription": { "type": "string", "maxLength": 40 }
+        }
+      }
+    },
+    "parameters": {
+      "top": { "name": "$top", "in": "query", "schema": { "type": "integer", "minimum": 0 } },
+      "skip": { "name": "$skip", "in": "query", "schema": { "type": "integer", "minimum": 0 } },
+      "count": { "name": "$count", "in": "query", "schema": { "type": "boolean" } }
+    }
+  }
+}

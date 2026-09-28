@@ -1,0 +1,62 @@
+{
+  "mcpTranslationVersion": "0.6",
+  "target": {
+    "ordId": "sap.s4:apiResource:CE_COSTCENTER_0001:v1",
+    "type": "openapi-v3"
+  },
+  "serverInfo": {
+    "name": "sap.mcp/cost_center",
+    "title": "cost_center",
+    "version": "1.0.0",
+    "description": "MCP server for the cost_center service."
+  },
+  "tools": [
+    {
+      "name": "GET_ACostCenter2",
+      "title": "GET_ACostCenter2",
+      "description": "Get entities from A_CostCenter_2",
+      "openApiType": {
+        "path": "/A_CostCenter_2",
+        "method": "get",
+        "parameters": [
+          {"name": "$top", "description": "", "in": "query", "newParameterName": "top"},
+          {"name": "$skip", "description": "", "in": "query", "newParameterName": "skip"},
+          {"name": "$filter", "description": "", "in": "query", "newParameterName": "filter"},
+          {"name": "$count", "description": "", "in": "query", "newParameterName": "count"},
+          {"name": "$orderby", "description": "", "in": "query", "newParameterName": "orderby"},
+          {"name": "$select", "description": "", "in": "query", "newParameterName": "select"}
+        ],
+        "requestBody": {},
+        "responseHeaders": [
+          {"name": "age"}, {"name": "cache-control"}, {"name": "expires"},
+          {"name": "last-modified"}, {"name": "x-request-id"}, {"name": "x-correlation-id"},
+          {"name": "content-type"}, {"name": "content-encoding"},
+          {"name": "content-language"}, {"name": "content-length"}
+        ]
+      }
+    },
+    {
+      "name": "GET_ACostCenterText2",
+      "title": "GET_ACostCenterText2",
+      "description": "Get entities from A_CostCenterText_2",
+      "openApiType": {
+        "path": "/A_CostCenterText_2",
+        "method": "get",
+        "parameters": [
+          {"name": "$top", "description": "", "in": "query", "newParameterName": "top"},
+          {"name": "$skip", "description": "", "in": "query", "newParameterName": "skip"},
+          {"name": "$filter", "description": "", "in": "query", "newParameterName": "filter"},
+          {"name": "$count", "description": "", "in": "query", "newParameterName": "count"},
+          {"name": "$select", "description": "", "in": "query", "newParameterName": "select"}
+        ],
+        "requestBody": {},
+        "responseHeaders": [
+          {"name": "age"}, {"name": "cache-control"}, {"name": "expires"},
+          {"name": "last-modified"}, {"name": "x-request-id"}, {"name": "x-correlation-id"},
+          {"name": "content-type"}, {"name": "content-encoding"},
+          {"name": "content-language"}, {"name": "content-length"}
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+apiVersion: asset.sap/v1
+kind: Asset
+type: agent
+
+metadata:
+  name: cost-center-agent
+  version: "1.0.0"
+
+provides:
+  apis:
+    - name: cost-center-agent
+      kind: a2a
+      ordId: customer.build:apiResource:finance-controller-cost-center-agent-8d5f9.cost-center-agent:v1
+
+container:
+  buildPath: .
+  port: 5000
+
+requires:
+  - name: sap-s4-ce-costcenter-0001-mcp-server
+    kind: mcp-server
+    ordId: customer.build:apiResource:finance-controller-cost-center-agent-8d5f9.sap-s4-ce-costcenter-0001-mcp-server:v1
+
+probes:
+  startup:
+    path: /.well-known/agent.json
+    periodSeconds: 5
+    timeoutSeconds: 3
+    failureThreshold: 18
+  liveness:
+    path: /.well-known/agent.json
+    initialDelaySeconds: 15
+    periodSeconds: 10
+    timeoutSeconds: 5
+    failureThreshold: 3
+  readiness:
+    path: /.well-known/agent.json
+    initialDelaySeconds: 5
+    periodSeconds: 5
+    timeoutSeconds: 3
+    failureThreshold: 3

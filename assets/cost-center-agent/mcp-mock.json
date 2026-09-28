@@ -1,0 +1,173 @@
+{
+  "servers": {
+    "sap-s4-cost-center": {
+      "mcp_server_name": "sap.mcp/cost_center",
+      "description": "MCP server for the cost_center service — SAP S/4HANA CE_COSTCENTER_0001.",
+      "tools": {
+        "GET_ACostCenter2": {
+          "description": "Get entities from A_CostCenter_2",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "top": {
+                "type": "integer",
+                "description": "Maximum number of items to return"
+              },
+              "skip": {
+                "type": "integer",
+                "description": "Number of items to skip"
+              },
+              "filter": {
+                "type": "string",
+                "description": "OData filter expression"
+              },
+              "count": {
+                "type": "boolean",
+                "description": "Include count of items"
+              },
+              "orderby": {
+                "type": "string",
+                "description": "Order items by property values"
+              },
+              "select": {
+                "type": "string",
+                "description": "Select properties to be returned"
+              }
+            },
+            "required": []
+          },
+          "mock_response": {
+            "@odata.count": 47,
+            "value": [
+              {
+                "ControllingArea": "A000",
+                "CostCenter": "CC-1000",
+                "ValidityEndDate": "9999-12-31",
+                "ValidityStartDate": "2020-01-01",
+                "CostCenterName": "Corporate IT",
+                "CostCenterDescription": "Corporate Information Technology",
+                "CompanyCode": "1000",
+                "CostCenterCategory": "1",
+                "CostCtrResponsiblePersonName": "John Smith",
+                "Department": "IT",
+                "ProfitCenter": "PC-1000"
+              },
+              {
+                "ControllingArea": "A000",
+                "CostCenter": "CC-2000",
+                "ValidityEndDate": "9999-12-31",
+                "ValidityStartDate": "2020-01-01",
+                "CostCenterName": "Finance",
+                "CostCenterDescription": "Finance and Accounting",
+                "CompanyCode": "1000",
+                "CostCenterCategory": "1",
+                "CostCtrResponsiblePersonName": "Jane Doe",
+                "Department": "FIN",
+                "ProfitCenter": "PC-2000"
+              },
+              {
+                "ControllingArea": "A000",
+                "CostCenter": "CC-3000",
+                "ValidityEndDate": "9999-12-31",
+                "ValidityStartDate": "2020-01-01",
+                "CostCenterName": "Human Resources",
+                "CostCenterDescription": "Human Resources Department",
+                "CompanyCode": "1000",
+                "CostCenterCategory": "1",
+                "CostCtrResponsiblePersonName": "Alice Johnson",
+                "Department": "HR",
+                "ProfitCenter": "PC-3000"
+              },
+              {
+                "ControllingArea": "A000",
+                "CostCenter": "CC-4000",
+                "ValidityEndDate": "9999-12-31",
+                "ValidityStartDate": "2020-01-01",
+                "CostCenterName": "Marketing",
+                "CostCenterDescription": "Marketing and Communications",
+                "CompanyCode": "1000",
+                "CostCenterCategory": "1",
+                "CostCtrResponsiblePersonName": "Bob Williams",
+                "Department": "MKT",
+                "ProfitCenter": "PC-4000"
+              },
+              {
+                "ControllingArea": "A000",
+                "CostCenter": "CC-5000",
+                "ValidityEndDate": "9999-12-31",
+                "ValidityStartDate": "2020-01-01",
+                "CostCenterName": "Sales",
+                "CostCenterDescription": "Sales and Business Development",
+                "CompanyCode": "1000",
+                "CostCenterCategory": "1",
+                "CostCtrResponsiblePersonName": "Carol Brown",
+                "Department": "SALES",
+                "ProfitCenter": "PC-5000"
+              }
+            ]
+          }
+        },
+        "GET_ACostCenterText2": {
+          "description": "Get entities from A_CostCenterText_2",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "top": {
+                "type": "integer",
+                "description": "Maximum number of items to return"
+              },
+              "skip": {
+                "type": "integer",
+                "description": "Number of items to skip"
+              },
+              "filter": {
+                "type": "string",
+                "description": "OData filter expression"
+              },
+              "count": {
+                "type": "boolean",
+                "description": "Include count of items"
+              },
+              "select": {
+                "type": "string",
+                "description": "Select properties to be returned"
+              }
+            },
+            "required": []
+          },
+          "mock_response": {
+            "@odata.count": 47,
+            "value": [
+              {
+                "Language": "EN",
+                "ControllingArea": "A000",
+                "CostCenter": "CC-1000",
+                "ValidityEndDate": "9999-12-31",
+                "CostCenterName": "Corporate IT",
+                "CostCenterDescription": "Corporate Information Technology"
+              },
+              {
+                "Language": "EN",
+                "ControllingArea": "A000",
+                "CostCenter": "CC-2000",
+                "ValidityEndDate": "9999-12-31",
+                "CostCenterName": "Finance",
+                "CostCenterDescription": "Finance and Accounting"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "created_for_agent": "cost-center-agent",
+    "mock_mode": true,
+    "deterministic": true,
+    "total_servers": 1,
+    "total_tools": 2,
+    "generated_from": ["translation.json"],
+    "generation_date": "2026-08-28"
+  }
+}

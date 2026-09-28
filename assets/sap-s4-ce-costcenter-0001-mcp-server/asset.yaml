@@ -1,0 +1,20 @@
+apiVersion: asset.sap/v1
+kind: Asset
+type: mcp-server
+
+metadata:
+  name: sap-s4-ce-costcenter-0001-mcp-server
+  version: "1.0.0"
+  translation: mcp-translation/translation.json
+  apiSpec: mcp-translation/api-spec.json
+
+provides:
+  apis:
+    - name: sap-s4-ce-costcenter-0001-mcp-server
+      kind: mcp-server
+      ordId: customer.build:apiResource:finance-controller-cost-center-agent-8d5f9.sap-s4-ce-costcenter-0001-mcp-server:v1
+
+requires:
+  - name: CE_COSTCENTER_0001
+    kind: api
+    ordId: sap.s4:apiResource:CE_COSTCENTER_0001:v1

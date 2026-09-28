@@ -1,0 +1,12 @@
+[
+  {
+    "name": "GET_ACostCenter2",
+    "title": "GET_ACostCenter2",
+    "description": "Get entities from A_CostCenter_2"
+  },
+  {
+    "name": "GET_ACostCenterText2",
+    "title": "GET_ACostCenterText2",
+    "description": "Get entities from A_CostCenterText_2"
+  }
+]
